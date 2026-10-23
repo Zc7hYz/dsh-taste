@@ -1,0 +1,36 @@
+{
+  "name": "dsh-taste",
+  "version": "1.0.0",
+  "description": "一句话给出多个风格方案，按真实站点 DESIGN.md 的 token 实现，写完自检。DSH（DeepSeek Harness）界面设计插件：注入设计工作规则 + 注册 design_* 工具族 + 桥接 impeccable 确定性引擎。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": { "default": "./lib/index.js" },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "cordis.patch.yml", "scripts", "README.md", "LICENSE"],
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "design",
+    "design-system",
+    "frontend",
+    "ui",
+    "impeccable",
+    "design-md"
+  ],
+  "engines": { "node": ">=20" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.0-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}
