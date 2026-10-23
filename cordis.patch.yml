@@ -1,0 +1,28 @@
+# dsh-taste bundle patch
+#
+# 把 dsh-taste 插件挂进 DSH profile 的组合树。
+# 挂载后插件会：
+#   1. 注册 design_* 工具族（提方案 / 检索风格 / 套用风格 / 体检 / 取细则 / 引擎桥）
+#   2. 向每个会话的系统提示注入「界面设计工作规则」块
+#
+# 安装（DSH 桌面版）：
+#   powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1
+#
+- insert:
+    - id: taste
+      name: dsh-taste
+      config:
+        # 以下全部可省略，省略时插件按下列顺序自动定位：
+        #   skillRoot  → %DSH_HOME%/skills/impeccable（impeccable install --providers=dsh --user 的产物）
+        #   stylesRoot → <插件目录>/assets/design-md
+        #   enginePath → skillRoot/scripts/bin/<os>/impeccable(.exe)
+        #
+        # 需要自定义时再打开：
+        # skillRoot: "D:\\assets\\impeccable"
+        # stylesRoot: "D:\\assets\\design-md"
+        # enginePath: ""
+        # 单次引擎调用超时（毫秒）
+        timeoutMs: 180000
+        # 是否向会话注入设计规则块
+        injectSessionRule: true
+        verbose: true
