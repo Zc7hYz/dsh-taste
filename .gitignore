@@ -1,0 +1,7 @@
+# 外部资产（setup-assets.ps1 生成，不入库：第三方二进制 / 20MB / 版权）
+assets/
+node_modules/
+*.log
+*.bak
+.DS_Store
+Thumbs.db
